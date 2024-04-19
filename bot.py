@@ -72,7 +72,7 @@ async def help_command(bot, message: Message):
 
 **Enjoy using the bot! If you encounter any issues, feel free to contact the owner.**
 
-**OWNER :** @LISA_FAN_LK @YEAH_NEW
+**OWNER :** @LISA_FAN_LK & @YEAH_NEW
 """
     await message.reply_text(help_msg)
 
