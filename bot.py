@@ -67,6 +67,19 @@ async def handle_document(bot, message: Message):
     # Handle document message
     await message.reply_text(f"Document file ID: {message.document.file_id}")
 
+# Define handlers for voice and audio messages
+@app.on_message(filters.voice)
+async def handle_voice(bot, message: Message):
+    # Handle voice message
+    await message.reply_text(f"Voice file ID: {message.voice.file_id}")
+
+@app.on_message(filters.audio)
+async def handle_audio(bot, message: Message):
+    # Handle audio message
+    await message.reply_text(f"Audio file ID: {message.audio.file_id}")
+
+
 # Run the client
 if __name__ == "__main__":
+    print("alive")
     app.run()
