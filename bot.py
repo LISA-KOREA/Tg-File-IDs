@@ -8,6 +8,11 @@ bot_token = '6986631333:AAHJ1THDOYeWasJfJ58ARCmlyGcyCB2GPO8'
 
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
+# Define start command handler
+@app.on_message(filters.command("start"))
+async def start_command(bot, message: Message):
+    await message.reply_text("Welcome to your bot! Send me a video, sticker, photo, or document to get its file ID.")
+
 # Define handlers for different types of messages
 @app.on_message(filters.video)
 async def handle_video(bot, message: Message):
