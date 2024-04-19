@@ -32,7 +32,7 @@ async def handle_new_user_text(bot, message: Message):
         "id": message.from_user.id,
 
         
-        "is_bot": message.from_user.is_bot,
+        \n"is_bot": message.from_user.is_bot,
 
         
         "first_name": message.from_user.first_name,
