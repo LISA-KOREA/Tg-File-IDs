@@ -3,9 +3,9 @@ from pyrogram import Client, filters
 from pyrogram.types import Message
 
 #ADD YOURS
-api_id = 
-api_hash = ''
-bot_token = ''
+api_id = 4888076
+api_hash = '8b9b8214d84305d5ba8042c93575ea84'
+bot_token = '6986631333:AAHJ1THDOYeWasJfJ58ARCmlyGcyCB2GPO8'
 
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
