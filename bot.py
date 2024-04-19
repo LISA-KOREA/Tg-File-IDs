@@ -11,20 +11,16 @@ app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 # Define start command handler
 @app.on_message(filters.command("start"))
 async def start_command(bot, message: Message):
-    user_info = {
-        "id": message.from_user.id,
-        "is_bot": message.from_user.is_bot,
-        "first_name": message.from_user.first_name,
-        "username": message.from_user.username,
-        "language_code": message.from_user.language_code
-    }
-    chat_info = {
-        "id": message.chat.id,
-        "type": message.chat.type,
-        "username": message.chat.username,
-        "first_name": message.chat.first_name
-    }
-    await message.reply_text("Welcome to your bot! Send me a video, sticker, photo, or document to get its file ID.")
+    # Check if the user has a first name
+    if message.from_user.first_name:
+        user_name = message.from_user.first_name
+    else:
+        user_name = "User"
+    
+    # Send personalized welcome message
+    await message.reply_text(f"Hey 👋 {user_name}, \nSend me a video, sticker, photo, Voice, Audio, or document to get its file ID.")
+
+
 
 @app.on_message(filters.private & filters.text & ~filters.forwarded)
 async def handle_new_user_text(bot, message: Message):
