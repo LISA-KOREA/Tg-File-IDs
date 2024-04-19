@@ -36,9 +36,9 @@ async def handle_new_user_text(bot, message: Message):
         "language_code": message.from_user.language_code
     }
     chat_info = {
-        "id": message.chat.id,
-        "type": message.chat.type,
-        "username": message.chat.username,
+        "id":\n message.chat.id,
+        "type":\n message.chat.type,
+        "username":\n message.chat.username,
         "first_name": message.chat.first_name
     }
     info_text = f"User Info:\n\n{new_user_info}\n\nChat Info:\n\n{chat_info}"
