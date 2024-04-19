@@ -30,7 +30,7 @@ async def start_command(bot, message: Message):
     
     # Send personalized welcome message
     await message.reply_text(
-        text="👋 Hey, \n**Send me a video, sticker, photo, Voice, Audio, or document to get its file ID.**",
+        text="👋 Hello \n**Send me a video, sticker, photo, Voice, Audio, or document to get its file ID.**",
         reply_markup=InlineKeyboardMarkup(
         [
           [
