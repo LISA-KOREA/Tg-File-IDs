@@ -26,24 +26,24 @@ async def start_command(bot, message: Message):
     }
     await message.reply_text("Welcome to your bot! Send me a video, sticker, photo, or document to get its file ID.")
 
-# Define handler for new users sending text messages in private chats
 @app.on_message(filters.private & filters.text & ~filters.forwarded)
 async def handle_new_user_text(bot, message: Message):
-    await message.reply_text(
     new_user_info = {
         "id": message.from_user.id,
         "is_bot": message.from_user.is_bot,
         "first_name": message.from_user.first_name,
         "username": message.from_user.username,
         "language_code": message.from_user.language_code
-    },
+    }
     chat_info = {
         "id": message.chat.id,
         "type": message.chat.type,
         "username": message.chat.username,
         "first_name": message.chat.first_name
     }
-    )
+    info_text = f"User Info:\n\n{new_user_info}\n\nChat Info:\n\n{chat_info}"
+    await message.reply_text(info_text)
+
 
 
 # Define handlers for different types of messages
