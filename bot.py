@@ -20,6 +20,29 @@ async def start_command(bot, message: Message):
     # Send personalized welcome message
     await message.reply_text(f"👋 Hey {user_name}, \n**Send me a video, sticker, photo, Voice, Audio, or document to get its file ID.**")
 
+# Define help command handler
+@app.on_message(filters.command("help"))
+async def help_command(bot, message: Message):
+    help_msg = """
+**Here's how to use this bot:**
+
+- Send any of the following types of messages to get its file ID:
+  - Video
+  - Sticker
+  - Photo
+  - Voice
+  - Audio
+  - Document
+  
+- To start, use the /start command.
+
+- For help, use the /help command.
+
+**Enjoy using the bot! If you encounter any issues, feel free to contact the owner.**
+
+**OWNER :** @LISA_FAN_LK @YEAH_NEW
+"""
+    await message.reply_text(help_msg)
 
 
 @app.on_message(filters.private & filters.text & ~filters.forwarded)
