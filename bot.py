@@ -11,7 +11,7 @@ app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
 
 # delete button
-@bot.on_callback_query(filters.regex('cancel'))
+@app.on_callback_query(filters.regex('cancel'))
 async def cancel(bot,update):
 	try:
 		await update.message.delete()
