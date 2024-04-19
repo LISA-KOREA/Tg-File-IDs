@@ -1,3 +1,4 @@
+from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceReply
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
@@ -7,6 +8,15 @@ api_hash = ''
 bot_token = ''
 
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
+
+
+# delete button
+@bot.on_callback_query(filters.regex('cancel'))
+async def cancel(bot,update):
+	try:
+		await update.message.delete()
+	except:
+		return
 
 # Define start command handler
 @app.on_message(filters.command("start"))
@@ -18,7 +28,27 @@ async def start_command(bot, message: Message):
         user_name = "User"
     
     # Send personalized welcome message
-    await message.reply_text(f"👋 Hey {user_name}, \n**Send me a video, sticker, photo, Voice, Audio, or document to get its file ID.**")
+    await message.reply_text(
+        text="👋 Hey {user_name}, \n**Send me a video, sticker, photo, Voice, Audio, or document to get its file ID.**",
+        reply_markup=InlineKeyboardMarkup(
+        [
+          [
+          InlineKeyboardButton('📍 𝐔𝐩𝐝𝐚𝐭𝐞 𝐂𝐡𝐚𝐧𝐧𝐞𝐥', url='https://t.me/NT_BOT_CHANNEL'),
+      ],
+      [
+          InlineKeyboardButton('👨‍💻 𝐃𝐞𝐯𝐞𝐥𝐨𝐩𝐞𝐫', url='https://t.me/yeah_new'),
+          InlineKeyboardButton('𝐒𝐮𝐩𝐩𝐨𝐫𝐭 𝐆𝐫𝐨𝐮𝐩', url='https://t.me/NT_BOTS_SUPPORT'),
+          ],
+          [
+          InlineKeyboardButton('⛔️ 𝐂𝐋𝐎𝐒𝐄', callback_data='cancel')
+        ]  
+      ]
+     ),
+   )
+    
+
+
+
 
 # Define help command handler
 @app.on_message(filters.command("help"))
