@@ -11,27 +11,88 @@ app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 # Define start command handler
 @app.on_message(filters.command("start"))
 async def start_command(bot, message: Message):
+    user_info = {
+        "id": message.from_user.id,
+        "is_bot": message.from_user.is_bot,
+        "first_name": message.from_user.first_name,
+        "username": message.from_user.username,
+        "language_code": message.from_user.language_code
+    }
+    chat_info = {
+        "id": message.chat.id,
+        "type": message.chat.type,
+        "username": message.chat.username,
+        "first_name": message.chat.first_name
+    }
     await message.reply_text("Welcome to your bot! Send me a video, sticker, photo, or document to get its file ID.")
 
 # Define handlers for different types of messages
 @app.on_message(filters.video)
 async def handle_video(bot, message: Message):
-    # Handle video message
+    user_info = {
+        "id": message.from_user.id,
+        "is_bot": message.from_user.is_bot,
+        "first_name": message.from_user.first_name,
+        "username": message.from_user.username,
+        "language_code": message.from_user.language_code
+    }
+    chat_info = {
+        "id": message.chat.id,
+        "type": message.chat.type,
+        "username": message.chat.username,
+        "first_name": message.chat.first_name
+    }
     await message.reply_text(f"Video file ID: {message.video.file_id}")
 
 @app.on_message(filters.sticker)
 async def handle_sticker(bot, message: Message):
-    # Handle sticker message
+    user_info = {
+        "id": message.from_user.id,
+        "is_bot": message.from_user.is_bot,
+        "first_name": message.from_user.first_name,
+        "username": message.from_user.username,
+        "language_code": message.from_user.language_code
+    }
+    chat_info = {
+        "id": message.chat.id,
+        "type": message.chat.type,
+        "username": message.chat.username,
+        "first_name": message.chat.first_name
+    }
     await message.reply_text(f"Sticker file ID: {message.sticker.file_id}")
 
 @app.on_message(filters.photo)
 async def handle_photo(bot, message: Message):
-    # Handle photo message
+    user_info = {
+        "id": message.from_user.id,
+        "is_bot": message.from_user.is_bot,
+        "first_name": message.from_user.first_name,
+        "username": message.from_user.username,
+        "language_code": message.from_user.language_code
+    }
+    chat_info = {
+        "id": message.chat.id,
+        "type": message.chat.type,
+        "username": message.chat.username,
+        "first_name": message.chat.first_name
+    }
     await message.reply_text(f"Photo file ID: {message.photo.file_id}")
 
 @app.on_message(filters.document)
 async def handle_document(bot, message: Message):
-    # Handle document message
+    user_info = {
+        "id": message.from_user.id,
+        "is_bot": message.from_user.is_bot,
+        "first_name": message.from_user.first_name,
+        "username": message.from_user.username,
+        "language_code": message.from_user.language_code
+    }
+    chat_info = {
+        "id": message.chat.id,
+        "type": message.chat.type,
+        "username": message.chat.username,
+        "first_name": message.chat.first_name
+    }
     await message.reply_text(f"Document file ID: {message.document.file_id}")
 
 # Run the client
