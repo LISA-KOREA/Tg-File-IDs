@@ -2,11 +2,12 @@ from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton, ForceRepl
 from pyrogram import Client, filters
 from pyrogram.types import Message
 
-#ADD YOURS
 
-api_id = 4888076
-api_hash = '8b9b8214d84305d5ba8042c93575ea84'
-bot_token = '6986631333:AAHJ1THDOYeWasJfJ58ARCmlyGcyCB2GPO8'
+# Replace 'YOUR_API_ID', 'YOUR_API_HASH', and 'YOUR_BOT_TOKEN' with your actual values
+
+api_id = 
+api_hash = ''
+bot_token = ''
 
 app = Client("my_bot", api_id=api_id, api_hash=api_hash, bot_token=bot_token)
 
