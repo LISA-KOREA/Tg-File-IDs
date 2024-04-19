@@ -20,6 +20,7 @@
 ### Bot Commands 
 ```
 start - Check Bot Online 🔔
+help - How To Use The Bot 🆘
 
 ```
 
