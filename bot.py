@@ -18,7 +18,7 @@ async def start_command(bot, message: Message):
         user_name = "User"
     
     # Send personalized welcome message
-    await message.reply_text(f"Hey 👋 {user_name}, \nSend me a video, sticker, photo, Voice, Audio, or document to get its file ID.")
+    await message.reply_text(f"👋 Hey {user_name}, \n**Send me a video, sticker, photo, Voice, Audio, or document to get its file ID.**")
 
 
 
