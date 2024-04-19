@@ -1,2 +1,3 @@
 # TG-FILE-IDs
-Support sticker, photo, etc
+
+###### Support video, sticker, photo, Voice, Audio, or document
