@@ -36,11 +36,11 @@ async def handle_new_user_text(bot, message: Message):
         "language_code": message.from_user.language_code
     }
     chat_info = {
-        "id": message.chat.id\n
+        "id": message.chat.id\n,
         
-        "type": message.chat.type\n
+        "type": message.chat.type\n,
         
-        "username": message.chat.username\n
+        "username": message.chat.username\n,
         
         "first_name": message.chat.first_name
     }
